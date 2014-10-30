@@ -1,0 +1,29 @@
+[  
+  {  
+    "pk": 1,
+    "model":"sponsors.sponsor",
+    "fields":{  
+      "url":"http://www.ini.uzh.ch",
+      "image":"images/sponsor/ini-logo_G9XGgsC.gif",
+      "title":"Institute of Neuroinformatics"
+    }
+  },
+  {  
+    "pk": 2,
+    "model":"sponsors.sponsor",
+    "fields":{ 
+      "url":"http://nsf.giv",
+      "image":"images/sponsor/nsf-logo2_0efczAI.jpg",
+      "title":"National Science Foundation"
+    }
+  },
+  {  
+    "pk": 3,
+    "model":"sponsors.sponsor",
+    "fields":{  
+      "url":"http://www.umd.edu",
+      "image":"images/sponsor/umdglobe2_VuqwMsk.gif",
+      "title":"University of Maryland"
+    }
+  }
+]

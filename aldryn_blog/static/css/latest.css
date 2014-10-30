@@ -1,0 +1,11 @@
+.blog-latest-entries {
+    background-color: #d1be9e;
+}
+
+.blog-items li {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.blog-items li .blog-meta {
+    display:none;
+}

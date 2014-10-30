@@ -1,0 +1,66 @@
+[{  
+  "pk":1120,
+  "model":"categories.category",
+  "fields":{  
+    "url":"",
+    "short_text":"are the cornerstones of INE",
+    "page":3,
+    "image":"images/cat/biomimetics-img_W2WDnqC.jpg",
+    "title":"Workshops"
+  }
+},
+{  
+  "pk":1121,
+  "model":"categories.category",
+  "fields":{  
+    "url":"",
+    "short_text":"are what runs INE",
+    "page":5,
+    "image":"images/cat/neurotechnology-img_5u25XOK.jpg",
+    "title":"Collaborators"
+  }
+},
+{  
+  "pk":1122,
+  "model":"categories.subcat",
+  "fields":{  
+    "url":"https://capocaccia.ethz.ch/",
+    "image":"images/scat/capocaccia_cwMSeP9.jpg",
+    "title":"CapoCaccia",
+    "page":null,
+    "cat":1120
+  }
+},
+{  
+  "pk":1123,
+  "model":"categories.subcat",
+  "fields":{  
+    "url":"http://www.neuromorphs.net/",
+    "image":"images/scat/telluride_sI1UT6k.jpg",
+    "title":"Telluride",
+    "page":null,
+    "cat":1120
+  }
+},
+{  
+  "pk":124,
+  "model":"categories.subcat",
+  "fields":{  
+    "url":"http://www.iniforum.ch/",
+    "image":"images/scat/Logo-Iniforum-for-web_V6fKpnY.png",
+    "title":"iniForum",
+    "page":null,
+    "cat":121
+  }
+},
+{  
+  "pk":1125,
+  "model":"categories.subcat",
+  "fields":{  
+    "url":"http://ncs.ethz.ch/",
+    "image":"images/scat/ncslogo-green_pTwQoaA.png",
+    "title":"NCS",
+    "page":null,
+    "cat":1121
+  }
+}]

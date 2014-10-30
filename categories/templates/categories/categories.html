@@ -1,0 +1,38 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/categories.css"></script>{% endaddtoblock %}
+
+<div class="categories">
+    {% for cat in cats %}
+    {% if instance.cat.id == cat.id %} 
+        <div class="image-portada">
+            <img alt="{{ cat.title }}" src="{{ cat.image.url }}">
+            <div class="wrapper-portada1">
+                <p>
+                    <span>
+                        <span class="">
+                            <a href="{{ cat.link }}" title="{{ cat.title }}">{{ cat.title }}</a>
+                        </span> 
+                        {{ cat.short_text }}
+                    </span>
+                </p>
+            </div>
+            {% if subcats %}
+            <ul class="subitems">
+                    {% for subcat in subcats %}
+                        {% if subcat.cat == cat %}
+                <li>
+                    <div class="subitem-box">
+                        <img alt="{{ subcat.title }}" src="{{ subcat.image.url }}">
+                        <div class="subitem-text">
+                            <a href="{{ subcat.url }}" title="{{ subcat.title }}">{{ subcat.title }}</a>
+                        </div>
+                    </div>
+                </li>
+                        {% endif %}
+                    {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% endfor %}
+</div>   

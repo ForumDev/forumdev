@@ -1,0 +1,8 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/sponsors.css"></script>{% endaddtoblock %}
+
+<div class="sponsors">
+    {% for sponsor in sponsors %}
+        <a class="" href="{{ sponsor.url }}"><img src="{{ sponsor.image.url }}" style="height:50px;"></a>
+    {% endfor %}
+</div>

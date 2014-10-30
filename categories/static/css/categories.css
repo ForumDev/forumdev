@@ -1,0 +1,84 @@
+/* 
+    Created on : Oct 26, 2014, 4:08:33 PM
+    Author     : maik
+*/
+
+/* Category */
+
+.image-portada {
+    position: relative;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    /*margin-left:1px;*/
+    float: left;
+}
+.image-portada p {
+    padding: 18px 16px 10px 16px;
+    margin: 0px;
+    line-height: 1.2em;
+    font-size: 1.1em;
+}
+
+.image-portada img {
+    width:100%;
+}
+
+.wrapper-portada1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: black;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(45,70,6,0.4);
+    min-height: 90px;
+}
+
+.image-portada p span {
+    margin: 0px;
+}
+.image-portada p a {
+    text-shadow: 0.1em 0.2em 0.2em rgba(0,0,0,0.4);
+    font-weight: normal;
+    color: #fff;
+    font-size: 34px;
+}
+
+
+.subitem-box {
+    position: relative;
+}
+.subitem-text {
+    position: absolute;
+    top: 0px;
+    color: white;
+    font-size: 16px !important;
+    width: 100%;
+    font-weight: normal;
+    padding: 5px;
+    padding-top: 11px;
+    line-height: 1.15em;
+    background-color: rgba(77,88,58,0.7);
+}
+.subitems li {
+    display: inline;
+    float: left;
+    padding: 10px;
+}
+ul.subitems {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    width: 100%;
+    font-size: 17px;
+    color: white;
+    padding: 0;
+    margin: 0;
+    float: left;
+    list-style-type: none;
+}
+.subitems li a {
+    color: #fff;
+}

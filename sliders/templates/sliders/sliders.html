@@ -1,0 +1,41 @@
+{% load sekizai_tags %}
+{% load sliders_extra %}
+{% load staticfiles %}
+
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/sliders.css"></script>{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/slider.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/slider.min.js"></script>
+{% endaddtoblock %}
+
+<div class="clear"></div>
+<div class="sliders">
+    {% if sliders %}
+        <div class="slider-title">
+            <ul class="slider-nav" id="slider-nav">
+<!--                        <li id="institute" class='active'>
+                    <a style="display:inline-block;" href="what.html" title="What is the INE?">What is the INE?</a></li>-->
+                {% for slide in sliders|dictsort:"index" %}
+                    <li id="{{ slide.short_name }}" style="width:{{ sliders|length|widthcalc }}%" {% if slide.index == 1 %} class="active" {% endif %}>
+                        <a href="#{{ slide.short_name }}" 
+                           title="{{ slide.title }}">
+                           {{ slide.title }}
+                    </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="slider" style="">
+            <ul class="bjqs">
+                {% for slide in sliders|dictsort:"index" %}
+                    <li>
+                    <img style="height:420px;" src="{{ slide.image.url }}" title="{{ slide.descript }}">
+                    </li>
+                {% endfor %}
+<!--                        <li>
+                    <a href="what.html"><img height=320 src="about.png" title="What is a neuromorphic cognitive system and what is neuromorphic cognition?"></a>
+                </li>-->
+            </ul>
+        </div>
+    {% endif %}
+</div>

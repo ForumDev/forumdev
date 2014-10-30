@@ -1,0 +1,57 @@
+[  
+  {  
+    "pk":1,
+    "model":"sliders.slider",
+    "fields":{  
+      "index":1,
+      "image":"images/slider/about_UYVT5cS.png",
+      "descript":"What is a neuromorphic cognitive system and what is neuromorphic cognition?",
+      "short_name":"whatis",
+      "title":"What is INE?"
+    }
+  },
+  {  
+    "pk":2,
+    "model":"sliders.slider",
+    "fields":{  
+      "index":2,
+      "image":"images/slider/NeuroChip_5CQfhiL.jpg",
+      "descript":"Neuromorphic processors: event-based VLSI models of cortical circuits for brain-inspired computation.",
+      "short_name":"innov",
+      "title":"Innovation"
+    }
+  },
+  {  
+    "pk":3,
+    "model":"sliders.slider",
+    "fields":{  
+      "index":3,
+      "image":"images/slider/cc2014_13v72wW.png",
+      "descript":"CapoCaccia 2014 Workshop was a great success!",
+      "short_name":"workshops",
+      "title":"Workshops"
+    }
+  },
+  {  
+    "pk":4,
+    "model":"sliders.slider",
+    "fields":{  
+      "index":4,
+      "image":"images/slider/ine_collab_fZuprnb.png",
+      "descript":"The INE collaborates with people all over the world.",
+      "short_name":"collab",
+      "title":"Collaborations"
+    }
+  },
+  {  
+    "pk":5,
+    "model":"sliders.slider",
+    "fields":{  
+      "index":5,
+      "image":"images/slider/exploration_DLqfXnN.jpg",
+      "descript":"INE constatnly explores ways to implement neuromorphic chips.",
+      "short_name":"explor",
+      "title":"Exploration"
+    }
+  }
+]
