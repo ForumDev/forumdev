@@ -29,8 +29,6 @@ this setup uses postgres database, make sure the following packages are installe
 
 7) edit forumdev/settings.py and setup  DATABASES (at the end of the file)
 
-(the no-initial-data is because I didn't get the fixtures to work yet :-( )
- 
-8) python manage.py syncdb --no-initial-data
+8) python manage.py syncdb
 
-9) python manage.py migrate --no-initial-data
+9) python manage.py migrate
