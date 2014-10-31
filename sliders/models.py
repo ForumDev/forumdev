@@ -3,7 +3,7 @@ from cms.models.pluginmodel import CMSPlugin
 from django.utils.http import int_to_base36
 # Create your models here.
 
-class Slider(CMSPlugin):
+class Slider(models.Model):
     title = models.TextField(max_length=25)
     index = models.IntegerField(default=0)
     descript = models.TextField(default='')

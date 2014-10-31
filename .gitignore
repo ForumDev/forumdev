@@ -1,1 +1,4 @@
 fdenv/
+.project
+.pydevproject
+.settings/

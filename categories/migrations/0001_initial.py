@@ -10,7 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding model 'Category'
         db.create_table(u'categories_category', (
-            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.TextField')(default='', max_length=15)),
             ('short_text', self.gf('django.db.models.fields.TextField')(default='', max_length=70)),
             ('url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
@@ -21,7 +21,7 @@ class Migration(SchemaMigration):
 
         # Adding model 'SubCat'
         db.create_table(u'categories_subcat', (
-            (u'cmsplugin_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['cms.CMSPlugin'], unique=True, primary_key=True)),
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('cat', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['categories.Category'])),
             ('title', self.gf('django.db.models.fields.TextField')(default='', max_length=15)),
             ('url', self.gf('django.db.models.fields.URLField')(max_length=200, null=True, blank=True)),
@@ -51,8 +51,8 @@ class Migration(SchemaMigration):
 
     models = {
         u'categories.category': {
-            'Meta': {'object_name': 'Category', '_ormbases': ['cms.CMSPlugin']},
-            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            'Meta': {'object_name': 'Category'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'page': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Page']", 'null': 'True', 'blank': 'True'}),
             'short_text': ('django.db.models.fields.TextField', [], {'default': "''", 'max_length': '70'}),
@@ -65,9 +65,9 @@ class Migration(SchemaMigration):
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'})
         },
         u'categories.subcat': {
-            'Meta': {'object_name': 'SubCat', '_ormbases': ['cms.CMSPlugin']},
+            'Meta': {'object_name': 'SubCat'},
             'cat': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['categories.Category']"}),
-            u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'page': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['cms.Page']", 'null': 'True', 'blank': 'True'}),
             'title': ('django.db.models.fields.TextField', [], {'default': "''", 'max_length': '15'}),

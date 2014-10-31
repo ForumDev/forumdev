@@ -2,7 +2,7 @@ from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 # Create your models here.
 
-class Sponsor(CMSPlugin):
+class Sponsor(models.Model):
     title = models.TextField()
     url = models.TextField(default='')
     image = models.ImageField("Spnsor image", upload_to="images/sponsor/", blank=False, null=False)

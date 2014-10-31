@@ -5,7 +5,7 @@ from cms.models import fields
 # Create your models here.
 
 
-class Category(CMSPlugin):
+class Category(models.Model):
     title = models.TextField(max_length=15, default='')
     short_text = models.TextField(max_length=70, default='')
     url = models.URLField(blank=True, null=True, help_text="Link to an external page (will override page link)",)
@@ -30,7 +30,7 @@ class Category(CMSPlugin):
         else: return "#"
     
     
-class SubCat(CMSPlugin):
+class SubCat(models.Model):
     cat = models.ForeignKey(Category)
     title = models.TextField(max_length=15, default='')
     url = models.URLField(blank=True, null=True, help_text="Link to an external page (will override page link)",)
