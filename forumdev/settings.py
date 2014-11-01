@@ -143,7 +143,7 @@ INSTALLED_APPS = (
     'sponsors',
     'categories', 
     'sliders',
-#     'publications',
+    'publications',
 )
 INSTALLED_APPS += (
     'myauth',
