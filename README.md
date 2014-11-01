@@ -58,6 +58,7 @@ AUTH_USER_MODEL = 'myauth.User'
 11) uncomment the lines in 8)
 
 12) run syncdb and migrate again
+>might ask you here to delete initial user if you created before [yes delete it]
 
 13) `python manage.py createsuperuser`
 
@@ -72,5 +73,7 @@ access on localhost:8000
 append `?edit` to url to login
 
 setup froumdev the way you like with the custom usermodel
+
+
 
 
