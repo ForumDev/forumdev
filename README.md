@@ -15,10 +15,17 @@
 
 1) install python, pip, virtualenv
  
-2) `cd /some/dev/dir`
-
 > in case python2.7 is not your default use:
 > export VIRTUALENV_PYTHON=/usr/bin/python2.7
+
+3.1) check out the follwoing ... somewhere
+```
+https://github.com/ForumDev/forumdev.git
+https://github.com/ForumDev/djangocms-publications.git
+https://github.com/ForumDev/aldryn-blog.git
+```
+3.2) create a symlink from `djangocms-publications/publications` and `aldryn-blog/aldryn-blog` to forumdev/. 
+> (examples in repo)
 
 3) `virtualenv fdenv`
  
@@ -31,16 +38,6 @@
 5.b) `pip install -r requirements.txt`
 
 > this setup uses postgres database, make sure the following packages are installed: libpq-dev postgresql-client-9.3 python-dev
-
-6) copy contents of repo into directory
-
-6.1) check out the follwoing ... somewhere https://github.com/ForumDev/djangocms-publications.git somewhere
-```
-https://github.com/ForumDev/djangocms-publications.git
-https://github.com/ForumDev/aldryn-blog.git
-```
-6.2) create a symlink from `djangocms-publications/publications` and `aldryn-blog/aldryn-blog` to forumdev/. 
-> (examples in repo)
 
 7) edit `forumdev/settings.py` and setup  DATABASES (at the end of the file)
 
@@ -56,12 +53,16 @@ AUTH_USER_MODEL = 'myauth.User'
 
 9) `python manage.py syncdb`
 
+> create user [yes]
+
 10) `python manage.py migrate`
 
 11) uncomment the lines in 8)
 
-12) run syncdb and migrate again
->might ask you here to delete initial user if you created before [yes delete it]
+12.1) `python manage.py syncdb`
+> don't delete auth | user tables when asked [no] (might need fixing somewhere)
+
+12.2) `python manage.py migrate myauth`
 
 13) `python manage.py createsuperuser`
 
@@ -76,6 +77,28 @@ access on localhost:8000
 append `?edit` to url to login
 
 setup froumdev the way you like with the custom usermodel
+
+#### example page setup
+
+> since no page fixtures exist yet...
+
+create page "Home"
+
+go to structure mode
+
+top right 'sponsors' placeholder, add sponsors plugin
+
+'content' placeholder, add sliders plugin
+
+'content' placeholder, add multi-column: 2 / 50%
+first column add categories plugin, select collab
+second column add categories plugin, select workshops
+
+Add page "Publications" -> save and continue editing -> advanced settings -> app hook-> publications
+
+publish publications page
+
+restart server
 
 
 #### comments
