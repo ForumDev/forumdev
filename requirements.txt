@@ -1,7 +1,7 @@
 Django==1.6.8
 Django-Select2==4.2.2
 Pillow==2.6.1
-South==1.0
+South>=1.0.1
 Unidecode==0.04.16
 aldryn-common==0.0.6
 argparse==1.2.1

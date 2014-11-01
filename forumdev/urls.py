@@ -14,6 +14,7 @@ urlpatterns = i18n_patterns('',
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^publications/', include('publications.urls')),
+    url(r'^admin/publications/publication/import_bibtex/$', 'publications.admin_views.import_bibtex'),
 #    url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^', include('cms.urls')),
 )
