@@ -138,12 +138,12 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-#    the super forumdev-public apps:
+#    the forumdev-public apps:
     'forumdev',
     'sponsors',
     'categories', 
     'sliders',
-    'publications',
+#     'publications',
 )
 INSTALLED_APPS += (
     'myauth',
@@ -213,7 +213,7 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'newms2',                      # Or path to database file if using sqlite3.
+        'NAME': 'newms',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'newms',
         'PASSWORD': 'mb27199',

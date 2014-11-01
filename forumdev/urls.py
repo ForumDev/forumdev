@@ -10,11 +10,11 @@ admin.site.login_form = AuthLoginForm
 admin.autodiscover()
 
 urlpatterns = i18n_patterns('',
+#     url(r'^admin/publications/publication/import_bibtex/$', 'publications.admin_views.import_bibtex'),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
-    url(r'^publications/', include('publications.urls')),
-    url(r'^admin/publications/publication/import_bibtex/$', 'publications.admin_views.import_bibtex'),
+#     url(r'^publications/', include('publications.urls')),
 #    url(r'^polls/', include('polls.urls', namespace='polls')),
     url(r'^', include('cms.urls')),
 )
