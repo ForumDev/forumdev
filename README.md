@@ -34,10 +34,13 @@
 
 6) copy contents of repo into directory
 
-6.1) check out https://github.com/ForumDev/djangocms-publications.git somewhere
-
-6.2) create a symlink from djangocms-publications/publications to forumdev/. 
-> (example in repo)
+6.1) check out the follwoing ... somewhere https://github.com/ForumDev/djangocms-publications.git somewhere
+```
+https://github.com/ForumDev/djangocms-publications.git
+https://github.com/ForumDev/aldryn-blog.git
+```
+6.2) create a symlink from `djangocms-publications/publications` and `aldryn-blog/aldryn-blog` to forumdev/. 
+> (examples in repo)
 
 7) edit `forumdev/settings.py` and setup  DATABASES (at the end of the file)
 
@@ -75,5 +78,8 @@ append `?edit` to url to login
 setup froumdev the way you like with the custom usermodel
 
 
-
+#### comments
+>it's a little messy at the moment, didn't get to that yet :-)
+>thanks for all these great resources out there I tried
+>be sure to notice that this is a work in progress (I'll start working on a new branch starting tomorrow since I'll be on vacation and don't know what the internet situation will be)
 

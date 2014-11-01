@@ -1,9 +1,0 @@
-{% load sekizai_tags %}
-{% load staticfiles %}
-
-{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/latest.css"></script>{% endaddtoblock %}
-<div class="plugin plugin-blog">
-	<div class="blog-latest-entries">
-		{% include "aldryn_blog/includes/blog_items.html" with posts=instance.get_posts %}
-	</div>
-</div>
