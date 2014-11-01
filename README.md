@@ -1,8 +1,8 @@
-forumdev
--------
+# forumdev
 
-Requirements
-===
+
+#### Requirements
+
 
 * Python = 2.7.0 (? >=)
 * Django = 1.6.8 
@@ -10,8 +10,8 @@ Requirements
 
 > The app was tested with the versions above, but older versions might also work.
 
-install
-===
+#### install
+
 
 1) install python, pip, virtualenv
  
@@ -43,11 +43,13 @@ install
 
 8) comment out the following lines in settings.py
 
-> INSTALLED_APPS += (
->     'myauth',
-> )
-> 
-> AUTH_USER_MODEL = 'myauth.User'
+```
+INSTALLED_APPS += (
+    'myauth',
+)
+
+AUTH_USER_MODEL = 'myauth.User'
+```
 
 9) `python manage.py syncdb`
 
@@ -60,8 +62,8 @@ install
 13) `python manage.py createsuperuser`
 
 
-you are all setup 
----
+### you are all setup 
+
 run server:
 python manage.py runserver
 
