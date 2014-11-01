@@ -1,13 +1,12 @@
-from myauth.forms import AuthLoginForm 
 from django.conf.urls import *  # NOQA
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.conf import settings
 from cms.sitemaps import CMSSitemap
+from myauth.forms import AuthLoginForm 
 
 admin.site.login_form = AuthLoginForm 
-
 admin.autodiscover()
 
 urlpatterns = i18n_patterns('',

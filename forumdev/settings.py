@@ -145,6 +145,10 @@ INSTALLED_APPS = (
     'sliders',
     'publications',
 )
+INSTALLED_APPS += (
+    'myauth',
+)
+AUTH_USER_MODEL = 'myauth.User'
 
 INSTALLED_APPS += (
     'aldryn_blog',
