@@ -80,6 +80,8 @@ setup froumdev the way you like with the custom usermodel
 
 #### comments
 >it's a little messy at the moment, didn't get to that yet :-)
+
 >thanks for all these great resources out there I tried
+
 >be sure to notice that this is a work in progress (I'll start working on a new branch starting tomorrow since I'll be on vacation and don't know what the internet situation will be)
 
