@@ -106,5 +106,5 @@ restart server
 
 >thanks for all these great resources out there I tried
 
->be sure to notice that this is a work in progress (I'll start working on a new branch starting tomorrow since I'll be on vacation and don't know what the internet situation will be)
+>be sure to notice that this is a work in progress (I'll start working on a new branch starting tomorrow (2.11.2014) since I'll be on vacation until 11.10.2014 and don't know what the internet situation will be)
 
