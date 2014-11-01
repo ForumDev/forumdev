@@ -32,3 +32,8 @@ this setup uses postgres database, make sure the following packages are installe
 8) python manage.py syncdb
 
 9) python manage.py migrate
+
+publications
+------
+check out https://github.com/ForumDev/djangocms-publications.git somewhere and create a symlink to forumdev from djangocms-publications/publications to forumdev/.
+example in repo (don't actually know if the symlink worked though)

@@ -17,6 +17,7 @@ django-polymorphic==0.6
 django-reversion==1.8.4
 django-sekizai==0.7
 django-taggit==0.11.2
+django-crispy-forms>=1.4.0
 djangocms-admin-style==0.2.2
 djangocms-column==1.5
 djangocms-file==0.1
@@ -31,6 +32,7 @@ djangocms-teaser==0.1
 djangocms-text-ckeditor==2.4.0
 djangocms-video==0.1
 easy-thumbnails==2.2
+python-dateutil>=2.2
 html5lib==0.999
 psycopg2==2.5.4
 pytz==2014.7

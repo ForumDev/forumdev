@@ -1,0 +1,8 @@
+{% block subject %}Email verification for {{registration.user.full_name}} on Babbler.com{% endblock %}
+ 
+{% block html %}
+<p>Hi {{registration.user.short_name}},</p>
+ 
+<p>You just signed up for Babbler.com with the username {{registration.user.username}}.<br/>
+In order for us to activate your account, please confirm your email address by going to <a href="{{base_url}}{% url url_name %}?{{url_param}}={{registration.uuid}}">{{base_url}}{% url url_name %}?{{url_param}}={{registration.uuid}}</a></p>
+{% endblock %}

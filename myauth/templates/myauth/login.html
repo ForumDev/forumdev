@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+  <h1>Login</h1>
+  {% crispy form %}
+  <p><small><a href="{% url 'lost_password' %}">Lost your password?</a> - <a href="{% url 'register' %}">Create a new account</a></small></p>
+{% endblock %}
