@@ -45,6 +45,9 @@ p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bot
     /*margin-left: 9px;*/
     /*margin-bottom: 12px;*/
 }
+.slider-nav {
+    margin-bottom:0px;
+}
 .slider-title ul {
     padding-left:0px;
 }
@@ -53,6 +56,7 @@ p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bot
     background-color: rgb(89, 89, 89);
 }
 .slider-nav li {
+    white-space: nowrap;
     display: inline;
     list-style-type: none;
     padding-top:5px;

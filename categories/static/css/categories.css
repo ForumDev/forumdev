@@ -14,7 +14,8 @@
     float: left;
 }
 .image-portada p {
-    padding: 18px 16px 10px 16px;
+    /* padding: 18px 16px 10px 16px; */
+    padding:3%;
     margin: 0px;
     line-height: 1.2em;
     font-size: 1.1em;
@@ -33,7 +34,7 @@
     font-size: 18px;
     color: white;
     background-color: rgba(45,70,6,0.4);
-    min-height: 90px;
+    min-height: 10%;
 }
 
 .image-portada p span {
@@ -65,7 +66,8 @@
 .subitems li {
     display: inline;
     float: left;
-    padding: 10px;
+    padding: 1%;
+    width:32%;
 }
 ul.subitems {
     position: absolute;

@@ -173,7 +173,6 @@ THUMBNAIL_PROCESSORS = (
 )
 
 LANGUAGES = (
-    ## Customize this
     ('en', gettext('en')),
 )
 CMS_PLUGIN_CACHE = False
