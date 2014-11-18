@@ -56,7 +56,11 @@ class User(AbstractBaseUser, PermissionsMixin):
       validators.RegexValidator(re.compile('^[\w.@+-]+$'), _('Enter a valid username.'), _('invalid'))
     ])
   short_name = models.CharField(_('short name'), max_length=30, blank=True, null=True)
+  affiliation = models.CharField(_('affiliation'), max_length=255, blank=True, null=True)
+  avatar = models.ImageField("Profile Pic", upload_to="images/profile/", blank=True, null=True)
   full_name = models.CharField(_('full name'), max_length=255, blank=True, null=True)
+  research_field = models.CharField(_('Research Field'), max_length=255, blank=True, null=True)
+  research_status = models.CharField(_('Status'), max_length=255, blank=True, null=True)
   email = models.EmailField(_('email address'), max_length=255, unique=True)
   is_staff = models.BooleanField(_('staff status'), default=False,
     help_text=_('Designates whether the user can log into this admin site.'))
@@ -84,6 +88,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
   objects = UserManager()
 
+class Interests(models.Model):
+    name = models.CharField(_('name'), max_length=30, blank=True, null=True)
+    
 
 class Registration(models.Model):
  

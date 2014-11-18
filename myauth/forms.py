@@ -5,7 +5,8 @@ from django.db.models import Q
 from crispy_forms.helper import FormHelper                                                
 from crispy_forms.layout import Layout, HTML, Submit
  
-from myauth.models import User, Registration
+from myauth.models import User, Registration, Interests
+from django.forms.models import ModelChoiceField, SelectMultiple
 
 
 class LoginFormMixin(object):
@@ -64,7 +65,7 @@ class AuthLoginForm(LoginFormMixin, AuthenticationForm):
 class UserCreationForm(AuthUserCreationForm):
  
   receive_newsletter = forms.BooleanField(required=False)
- 
+#   interests = ModelChoiceField(queryset=Interests.objects.all())
   class Meta:
     model = User
  
@@ -84,7 +85,9 @@ class UserCreationForm(AuthUserCreationForm):
 class UserChangeForm(AuthUserChangeForm):
  
   receive_newsletter = forms.BooleanField(required=False)
- 
+#   interests = ModelChoiceField(queryset=Interests.objects.all())
+  interests = forms.MultipleChoiceField( required=False,
+    widget=SelectMultiple(), choices=Interests.objects.all())
   class Meta:
     model = User
 
@@ -106,7 +109,7 @@ class UserRegistrationForm(UserCreationForm):
     self.helper.field_class = 'col-md-6'
     self.helper.layout = Layout(
       # password1 and password2 are the fields defined in django.contrib.auth.forms.UserCreationForm
-      'short_name', 'full_name', 'email', 'username', 'password1', 'password2',
+      'short_name', 'affiliation', 'full_name', 'email', 'username', 'password1', 'password2',
       HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
       Submit('submit', 'Register'), 
       HTML('</div></div>'),
