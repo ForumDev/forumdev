@@ -35,9 +35,11 @@ https://github.com/ForumDev/aldryn-blog.git
 
 5.a) get the requirements.txt from the repo
 
-5.b) `pip install -r requirements.txt`
+> this setup uses postgres database, make sure the following packages are installed: 
 
-> this setup uses postgres database, make sure the following packages are installed: libpq-dev postgresql-client-9.3 python-dev
+> `libpq-dev python-dev` and `postgresql postgresql-contrib` for the postgres server
+
+5.b) `pip install -r requirements.txt`
 
 7) edit `forumdev/settings.py` and setup  DATABASES (at the end of the file)
 
