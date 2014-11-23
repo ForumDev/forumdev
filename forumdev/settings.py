@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'crispy_forms',
 #    the forumdev-public apps:
     'forumdev',
     'sponsors',
@@ -145,6 +146,8 @@ INSTALLED_APPS = (
     'sliders',
     'publications',
 )
+CRISPY_TEMPLATE_PACK = 'bootstrap'
+
 INSTALLED_APPS += (
     'myauth',
 )

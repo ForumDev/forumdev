@@ -15,7 +15,7 @@ urlpatterns = i18n_patterns('',
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^publications/', include('publications.urls')),
-#    url(r'^polls/', include('polls.urls', namespace='polls')),
+    url(r'^auth/', include('myauth.urls')),
     url(r'^', include('cms.urls')),
 )
 

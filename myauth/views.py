@@ -5,6 +5,7 @@ from django.contrib.auth import login, logout
 from django.contrib import messages
 from django.conf import settings
 from django.http import Http404
+from django.contrib.sites.models import Site
  
 from templated_email import send_templated_mail
        
@@ -27,12 +28,13 @@ class RegisterView(FormView):
     send_templated_mail(
       template_name='registration',
       # substitute your e-mail adress
-      from_email='noreply@babbler.com',
+      from_email='noreply@crisler.ch',
       recipient_list=[form.cleaned_data['email'],],
       context={
         'url_name': 'activation',
         'url_param': 'key',
         'registration': registration,
+        'current_site': Site.objects.get_current(),
         'base_url': settings.SITE_URL,
       },
     )
@@ -72,7 +74,7 @@ class LoginView(FormView):
   form_class = LoginForm
    
   def get_success_url(self):                           
-   return reverse('homepage')
+   return '/' #reverse('homepage')
    
   def form_valid(self, form):
     form.user.backend = 'django.contrib.auth.backends.ModelBackend'
@@ -112,12 +114,13 @@ class LostPasswordView(FormView):
     send_templated_mail(
       template_name='lost_password',
       # substitute your e-mail adress
-      from_email='noreply@babbler.com',
+      from_email='noreply@crisler.ch',
       recipient_list=[form.cleaned_data['email'],],
       context={
         'url_name': 'reset_password',
         'url_param': 'key',
         'registration': registration,
+        'current_site': Site.objects.get_current(),
         'base_url': settings.SITE_URL,
       },
     ) 
