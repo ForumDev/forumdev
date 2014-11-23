@@ -16,7 +16,10 @@ div.forumdev-header .logo {
 div.forumdev-header .sponsors {
     text-align:right;
 }
-
+.login {
+    /* text-align: center; */
+    float:right;
+}
 .navbar-default {
     /*background-color: #FC9210 !important;*/
     background-image: linear-gradient(to bottom,#FC9210 0,#FCBD10 100%) !important;

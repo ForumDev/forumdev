@@ -25,8 +25,15 @@
                         <img src="{% static 'images/ine_logo.png' %}" alt="">
                     </a>
                 </div>
+                {% static_placeholder "sponsors" %}
+                <div class="login">
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Log out</a>        
+                  {% else %} 
+                    <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'register' %}">Register</a>
+                  {% endif %}
+                </div>
                 <!--<div class="sponsors">-->
-                {% placeholder "sponsors" %}
                 <!--</div>-->
             </div>
             <div class="clear"></div>

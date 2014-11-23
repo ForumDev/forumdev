@@ -7,7 +7,10 @@ and open the template in the editor.
     Created on : Oct 26, 2014, 4:08:33 PM
     Author     : maik
 */
-
+.sponsors {
+    float:right;
+    width:30%;
+}
 .sponsors a img {
     /*max-height: 35px;*/
 }
