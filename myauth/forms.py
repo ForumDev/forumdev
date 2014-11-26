@@ -5,7 +5,7 @@ from django.db.models import Q
 from crispy_forms.helper import FormHelper                                                
 from crispy_forms.layout import Layout, HTML, Submit
  
-from myauth.models import User, Registration, Interests
+from myauth.models import User, Registration, Interest
 from django.forms.models import ModelChoiceField, SelectMultiple
 
 
@@ -86,8 +86,10 @@ class UserChangeForm(AuthUserChangeForm):
  
   receive_newsletter = forms.BooleanField(required=False)
 #   interests = ModelChoiceField(queryset=Interests.objects.all())
-  interests = forms.MultipleChoiceField( required=False,
-    widget=SelectMultiple(), choices=Interests.objects.all())
+#   interests = forms.MultipleChoiceField( required=False,
+#     widget=SelectMultiple(), choices=[ (o.id, str(o)) for o in Interest.objects.all()])#Interest.objects.all())
+  interests = forms.ModelMultipleChoiceField(queryset=Interest.objects.all())
+
   class Meta:
     model = User
 

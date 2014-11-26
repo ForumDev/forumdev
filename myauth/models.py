@@ -13,6 +13,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django import forms
 
 
+
 def two_days_from_now():
   return timezone.now() + relativedelta(days=2)
 
@@ -47,6 +48,21 @@ class UserManager(BaseUserManager):
     user.save(using=self._db)
     return user
 
+class Interest(models.Model):
+    name = models.CharField(_('name'), max_length=30, blank=True, null=True)
+    def __str__(self):              # __unicode__ on Python 2
+        return self.name
+    def __unicode__(self):
+        return self.name
+    def __iter__(self):
+        return [ self.name ] 
+    class Meta:
+        verbose_name_plural = 'Interests'
+
+class InterestForm(forms.ModelForm):
+    class Meta:
+        model = Interest
+        fields = ['name']
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -62,6 +78,7 @@ class User(AbstractBaseUser, PermissionsMixin):
   research_field = models.CharField(_('Research Field'), max_length=255, blank=True, null=True)
   research_status = models.CharField(_('Status'), max_length=255, blank=True, null=True)
   email = models.EmailField(_('email address'), max_length=255, unique=True)
+  interests = models.ManyToManyField(Interest)
   is_staff = models.BooleanField(_('staff status'), default=False,
     help_text=_('Designates whether the user can log into this admin site.'))
   is_active = models.BooleanField(_('active'), default=False,
@@ -88,9 +105,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
   objects = UserManager()
 
-class Interests(models.Model):
-    name = models.CharField(_('name'), max_length=30, blank=True, null=True)
-    
 
 class Registration(models.Model):
  

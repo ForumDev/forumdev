@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
+from cms.admin.placeholderadmin import PlaceholderAdminMixin
  
-from myauth.models import User
+from myauth.models import User, Interest
 from myauth.forms import UserCreationForm, UserChangeForm
  
 class UserAdmin(AuthUserAdmin):
@@ -10,13 +11,14 @@ class UserAdmin(AuthUserAdmin):
     ('Personal info', {'fields': ('short_name', 'full_name', 'email', 'avatar')}),
     ('Academic info', {'fields': ('affiliation', 'research_status', 'research_field', 'interests')}),
     ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
-                    'groups', 'user_permissions')}),
+                    'groups'#, 'user_permissions'
+                    )}),
     ('Important dates', {'fields': ('last_login', 'date_joined')}),
   )
   add_fieldsets = (
     (None, {'fields': ('username', 'password1', 'password2', 'receive_newsletter')}),
     ('Personal info', {'fields': ('short_name', 'full_name', 'email', 'avatar')}),
-    ('Academic info', {'fields': ('affiliation', 'research_status', 'research_field', 'interests')}),
+    ('Academic info', {'fields': ('affiliation', 'research_status', 'research_field')}),
     ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
   )
   form = UserChangeForm
@@ -29,3 +31,8 @@ class UserAdmin(AuthUserAdmin):
  
  
 admin.site.register(User, UserAdmin)
+
+class InterestsAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
+    pass
+
+admin.site.register(Interest, InterestsAdmin)

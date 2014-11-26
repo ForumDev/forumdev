@@ -1,6 +1,23 @@
 [
   {
     "pk":1,
+    "model":"myauth.interest",
+    "fields":{
+      "name":"CapoCaccia"
+    }
+  },
+  {
+    "pk":2,
+    "model":"myauth.interest",
+    "fields":{
+      "name":"Telluride"
+    }
+  }
+]
+
+[
+  {
+    "pk":1,
     "model":"auth.group",
     "fields":{
       "name":"Reader",

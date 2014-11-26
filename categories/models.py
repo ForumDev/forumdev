@@ -46,7 +46,7 @@ class SubCat(models.Model):
     def __unicode__(self):
         return self.title
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'SubCategories'
     def link(self):
         if self.url:
             return self.url
