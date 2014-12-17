@@ -23,7 +23,15 @@ class RegisterView(FormView):
    
   def form_valid(self, form):
     user = form.save()
+    user.is_active = True
+    user.save()
     registration = Registration.objects.create(user=user)
+    
+#     user = User.objects.get(registration__uuid=uuid, type='register')
+#     user.is_active = True
+#     user.save()
+#     user.registration.delete()
+#     
     messages.info(self.request, 'Registration successfull')
     send_templated_mail(
       template_name='registration',

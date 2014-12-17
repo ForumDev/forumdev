@@ -88,7 +88,7 @@ class UserChangeForm(AuthUserChangeForm):
 #   interests = ModelChoiceField(queryset=Interests.objects.all())
 #   interests = forms.MultipleChoiceField( required=False,
 #     widget=SelectMultiple(), choices=[ (o.id, str(o)) for o in Interest.objects.all()])#Interest.objects.all())
-  interests = forms.ModelMultipleChoiceField(queryset=Interest.objects.all())
+  interests = forms.ModelMultipleChoiceField(queryset=Interest.objects.all(),widget=SelectMultiple(),required=False)
 
   class Meta:
     model = User

@@ -11,6 +11,7 @@ except ImportError:
     from django.conf.urls.defaults import patterns, url
 
 urlpatterns = patterns('',
+    url(r'^email_sent\.html$', EmailSentView.as_view(), name='confirmation_mail_sent'),                   
     url(r'^login\.html$', LoginView.as_view(), name='login'),
     url(r'^logout\.html$', LogoutView.as_view(), name='logout'),
     url(r'^register\.html$', RegisterView.as_view(), name='register'),

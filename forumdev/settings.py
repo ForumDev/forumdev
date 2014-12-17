@@ -31,7 +31,8 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-
+##DEFINE SITE URL
+SITE_URL = 'http://localhost:8000/'
 
 
 
@@ -174,6 +175,13 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+EMAIL_USE_TLS = True
+##NEED TO SETUP SMTP ON HOST
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '###gmail.com'
+EMAIL_HOST_PASSWORD = '###'
+EMAIL_PORT = 587
 
 LANGUAGES = (
     ('en', gettext('en')),

@@ -18,7 +18,7 @@ class UserAdmin(AuthUserAdmin):
   add_fieldsets = (
     (None, {'fields': ('username', 'password1', 'password2', 'receive_newsletter')}),
     ('Personal info', {'fields': ('short_name', 'full_name', 'email', 'avatar')}),
-    ('Academic info', {'fields': ('affiliation', 'research_status', 'research_field')}),
+    ('Academic info', {'fields': ('affiliation', 'research_status', 'research_field', 'interests')}),
     ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
   )
   form = UserChangeForm
