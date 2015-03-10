@@ -17,8 +17,8 @@ div.forumdev-header .sponsors {
     text-align:right;
 }
 .login {
-    /* text-align: center; */
-    float:right;
+    text-align: right;
+    /* float:right; */
 }
 .navbar-default {
     /*background-color: #FC9210 !important;*/
