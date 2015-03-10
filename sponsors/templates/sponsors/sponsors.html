@@ -3,6 +3,8 @@
 
 <div class="sponsors">
     {% for sponsor in sponsors %}
-        <a class="" href="{{ sponsor.url }}"><img src="{{ sponsor.image.url }}" style="height:50px;"></a>
+        {% if site in sponsor.sites.all %} 
+            <a class="" href="{{ sponsor.url }}"><img src="{{ sponsor.image.url }}" style="height:50px;"></a>
+        {% endif %}
     {% endfor %}
 </div>
