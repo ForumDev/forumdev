@@ -1,0 +1,17 @@
+{% load sekizai_tags %}
+{% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/logo.css"></script>{% endaddtoblock %}
+
+<div class="logo">
+{% for logo in logos %}
+    {% if site in logo.sites.all %} 
+        {% if logo.image.url %} 
+        <a href="#" title="">
+            <img src="{{ logo.image.url }}">
+        </a>
+            {% if logo.title %}
+                {{ logo.title }}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</div>   

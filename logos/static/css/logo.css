@@ -1,0 +1,13 @@
+/* 
+    Created on : Oct 26, 2014, 4:08:33 PM
+    Author     : maik
+*/
+
+/* Category */
+
+.logo {
+        float:left;
+    min-width: 200px;
+    width: 30%;
+    padding-bottom:5px;
+}

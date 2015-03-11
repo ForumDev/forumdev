@@ -6,12 +6,12 @@ body {
     background: url(../images/b03.png) repeat-x;
 }
 
-div.forumdev-header .logo {
+/* div.forumdev-header .logo {
     float:left;
     min-width: 200px;
     width: 30%;
     padding-bottom:5px;
-}
+} */
 
 div.forumdev-header .sponsors {
     text-align:right;
