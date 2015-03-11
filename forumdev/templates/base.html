@@ -1,4 +1,4 @@
-{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% load cms_tags staticfiles sekizai_tags placeholder_tags menu_tags %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,11 +29,11 @@
             <div class="forumdev-header">
                 <div class="logo">
                     <a href="#" title="">
-                        {% placeholder "logo" %}
+                        {% static_placeholder "logo" %}
                         <!-- <img src="{% static 'images/ine_logo.png' %}" alt=""> -->
                     </a>
                 </div>
-                {% placeholder "sponsors" %}
+                {% static_placeholder "sponsors" %}
                 <!--<div class="sponsors">-->
                 <!--</div>-->
             </div>
@@ -58,7 +58,7 @@
             {% endblock content %}
             <footer>
                 <hr/>
-                {% placeholder 'footer' %}
+                {% static_placeholder 'footer' %}
             </footer>
         </div>
         <script src="http://code.jquery.com/jquery.js"></script>

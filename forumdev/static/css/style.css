@@ -119,6 +119,12 @@ font-family: Arial,Helvetica,sans-serif;
 }
 
 
+footer {
+    position:absolute;
+    bottom: 0px;
+    margin-bottom:5px;
+}
+
 /* page */
 
 /*.page h1 {
