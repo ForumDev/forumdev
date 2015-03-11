@@ -113,6 +113,12 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'myauth',
+)
+AUTH_USER_MODEL = 'myauth.User'
+
+
+INSTALLED_APPS += (
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
     'django.contrib.auth',
@@ -140,6 +146,7 @@ INSTALLED_APPS = (
     'djangocms_video',
     'reversion',
     'crispy_forms',
+    'logos',
 #    the forumdev-public apps:
     'forumdev',
     'sponsors',
@@ -147,12 +154,11 @@ INSTALLED_APPS = (
     'sliders',
     'publications',
 )
+
+
+
 CRISPY_TEMPLATE_PACK = 'bootstrap'
 
-INSTALLED_APPS += (
-    'myauth',
-)
-AUTH_USER_MODEL = 'myauth.User'
 
 INSTALLED_APPS += (
     'aldryn_blog',
@@ -176,12 +182,14 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters',
 )
 
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
 ##NEED TO SETUP SMTP ON HOST
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '###gmail.com'
-EMAIL_HOST_PASSWORD = '###'
-EMAIL_PORT = 587
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 25
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'ForumDev <support@f14k2011.sui-inter.net>'
 
 LANGUAGES = (
     ('en', gettext('en')),
@@ -223,7 +231,7 @@ CMS_PLACEHOLDER_CONF = {}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'forumdev',                      # Or path to database file if using sqlite3.
+        'NAME': 'forumdev3',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'fduser',
         'PASSWORD': 'mb27199',
