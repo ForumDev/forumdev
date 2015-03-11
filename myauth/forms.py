@@ -113,7 +113,7 @@ class UserRegistrationForm(UserCreationForm):
       # password1 and password2 are the fields defined in django.contrib.auth.forms.UserCreationForm
       'short_name', 'affiliation', 'full_name', 'email', 'username', 'password1', 'password2',
        'avatar',
-      'affiliation', 'research_status', 'research_field', 'interests',
+      'research_status', 'research_field', 'interests',
       HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
       Submit('submit', 'Register'), 
       HTML('</div></div>'),
