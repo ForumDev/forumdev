@@ -120,9 +120,9 @@ font-family: Arial,Helvetica,sans-serif;
 
 
 footer {
-    position:absolute;
+    /* position:absolute;
     bottom: 0px;
-    margin-bottom:5px;
+    margin-bottom:5px; */
 }
 
 /* page */
