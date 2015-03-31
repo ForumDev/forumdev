@@ -3,7 +3,7 @@ from django import forms
 from django.db.models import Q
 
 from crispy_forms.helper import FormHelper                                                
-from crispy_forms.layout import Layout, HTML, Submit
+from crispy_forms.layout import Layout, HTML, Submit, Fieldset
  
 from myauth.models import User, Registration, Interest
 from django.forms.models import ModelChoiceField, SelectMultiple
@@ -111,9 +111,18 @@ class UserRegistrationForm(UserCreationForm):
     self.helper.field_class = 'col-md-6'
     self.helper.layout = Layout(
       # password1 and password2 are the fields defined in django.contrib.auth.forms.UserCreationForm
-      'short_name', 'affiliation', 'full_name', 'email', 'username', 'password1', 'password2',
-       'avatar',
-      'research_status', 'research_field', 'interests',
+      Fieldset('Personal info'
+               ,'first_name','last_name','username', 'password1', 'password2'
+               ,'email','telephone','affiliation','department','address','bill_address'
+               ),
+      Fieldset('More about yourself'
+               ,'avatar','gender','research_status', 'research_field', 'supervisor'
+               ,'short_bio'
+               ),
+      Fieldset('Social networking'
+               ,'twitter','google_plus','facebook', 'personal_email', 'news_feed'
+               ,'publication_feeds'
+               ),
       HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
       Submit('submit', 'Register'), 
       HTML('</div></div>'),

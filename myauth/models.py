@@ -66,19 +66,40 @@ class InterestForm(forms.ModelForm):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-  username = models.CharField(_('username'), max_length=30, unique=True,
+  GENDER_CHOICES = (
+    ('unspecified', 'Unsepcified'),
+    ('male', 'Male'),
+    ('female', 'Female'),
+  )
+  first_name = models.CharField(_('First name'), max_length=255, blank=False, null=False,default='')
+  last_name = models.CharField(_('Last name'), max_length=255, blank=False, null=False,default='')
+  username = models.CharField(_('Username'), max_length=30, unique=True,
     help_text=_('Required. 30 characters or fewer. Letters, numbers and @/./+/-/_ characters'),
     validators=[
       validators.RegexValidator(re.compile('^[\w.@+-]+$'), _('Enter a valid username.'), _('invalid'))
     ])
-  short_name = models.CharField(_('short name'), max_length=30, blank=True, null=True)
-  affiliation = models.CharField(_('affiliation'), max_length=255, blank=True, null=True)
-  avatar = models.ImageField("Profile Pic", upload_to="images/profile/", blank=True, null=True)
-  full_name = models.CharField(_('full name'), max_length=255, blank=True, null=True)
-  research_field = models.CharField(_('Research Field'), max_length=255, blank=True, null=True)
-  research_status = models.CharField(_('Status'), max_length=255, blank=True, null=True)
-  email = models.EmailField(_('email address'), max_length=255, unique=True)
+  email = models.EmailField(_('Email address'), max_length=255, unique=True)
+  telephone = models.CharField(_('Telephone'), max_length=255, blank=True, null=True)
+  affiliation = models.CharField(_('Affiliation'), max_length=255, blank=True, null=True)
+  department = models.CharField(_('Department'), max_length=255, blank=True, null=True)
+  address = models.TextField(_('Address'), max_length=255, blank=True, null=True)
+  bill_address = models.TextField(_('Billing/reimbursement address (if different from affiliation address)'), max_length=255, blank=True, null=True)
+
+  avatar = models.ImageField("Picture", upload_to="images/profile/", blank=True, null=True)
+  research_status = models.CharField(_('Status (Student, faculty, staff, ...)'), max_length=255, blank=True, null=True)
+  gender = models.CharField(_('Gender'), max_length=16, blank=True, null=True, choices = GENDER_CHOICES, default='unspecified' )
+  research_field = models.CharField(_('Research field/interests'), max_length=255, blank=True, null=True)
+  supervisor = models.CharField(_('Scientific advisor/mentor'), max_length=255, blank=True, null=True)
+  short_bio = models.TextField(_('Short bio/bragging rights'), blank=True, null=True)
+  
+  twitter = models.CharField(_('Twitter'), max_length=255, blank=True, null=True)
+  google_plus = models.CharField(_('Google+'), max_length=255, blank=True, null=True)
+  facebook = models.CharField(_('Facebook'), max_length=255, blank=True, null=True)
+  personal_email = models.EmailField(_('Email (personal)'), max_length=255, null=True,blank=True)
+  news_feed = models.CharField(_('news feed (RSS/Atom)'), max_length=255, blank=True, null=True)
+  publication_feed = models.CharField(_('publications feed (RSS/Atom)'), max_length=255, blank=True, null=True)
   interests = models.ManyToManyField(Interest, blank=True, null=True, related_name='users')
+
   is_staff = models.BooleanField(_('staff status'), default=False,
     help_text=_('Designates whether the user can log into this admin site.'))
   is_active = models.BooleanField(_('active'), default=False,
@@ -87,7 +108,7 @@ class User(AbstractBaseUser, PermissionsMixin):
   receive_newsletter = models.BooleanField(_('receive newsletter'), default=False)
 
   USERNAME_FIELD = 'username'
-  REQUIRED_FIELDS = ['email',]
+  REQUIRED_FIELDS = ['email','first_name','last_name']
 
 
   class Meta:
@@ -107,7 +128,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class Registration(models.Model):
- 
   uuid = models.CharField(max_length=36, default=get_uuid_str)
   user = models.ForeignKey(User, related_name='registration')
   expires = models.DateTimeField(default=two_days_from_now)
