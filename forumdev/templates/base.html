@@ -21,9 +21,9 @@
         <div class="container">
                 <div class="login">
                   {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Log out</a>        
+                    <a href="{% url 'logout' %}">Log out</a> | <a href="{% url 'profile' %}">Profile</a>        
                   {% else %} 
-                    <a href="{% url 'login' %}">Log in</a> or <a href="{% url 'register' %}">Register</a>
+                    <a href="{% url 'login' %}">Log in</a> | <a href="{% url 'register' %}">Register</a>
                   {% endif %}
                 </div>
             <div class="forumdev-header">

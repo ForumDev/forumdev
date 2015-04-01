@@ -5,6 +5,10 @@ from cms.admin.placeholderadmin import PlaceholderAdminMixin
 from myauth.models import User, Interest
 from myauth.forms import UserCreationForm, UserChangeForm
  
+class InterestsAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
+    pass
+
+admin.site.register(Interest, InterestsAdmin)
 
 class UserAdmin(AuthUserAdmin):
   fieldsets = (
@@ -45,8 +49,3 @@ class UserAdmin(AuthUserAdmin):
  
  
 admin.site.register(User, UserAdmin)
-
-class InterestsAdmin(PlaceholderAdminMixin, admin.ModelAdmin):
-    pass
-
-admin.site.register(Interest, InterestsAdmin)

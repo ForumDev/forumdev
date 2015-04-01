@@ -49,7 +49,7 @@ class UserManager(BaseUserManager):
     return user
 
 class Interest(models.Model):
-    name = models.CharField(_('name'), max_length=30, blank=True, null=True)
+    name = models.CharField(_('Name'), max_length=30, blank=True, null=True)
     def __str__(self):              # __unicode__ on Python 2
         return self.name
     def __unicode__(self):

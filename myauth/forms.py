@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm as AuthUserCreationForm, UserChangeForm as AuthUserChangeForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm as AuthUserCreationForm, UserChangeForm as AuthUserChangeForm, AuthenticationForm,\
+    ReadOnlyPasswordHashField
 from django import forms
 from django.db.models import Q
 
@@ -83,15 +84,50 @@ class UserCreationForm(AuthUserCreationForm):
  
  
 class UserChangeForm(AuthUserChangeForm):
- 
-  receive_newsletter = forms.BooleanField(required=False)
-#   interests = ModelChoiceField(queryset=Interests.objects.all())
-#   interests = forms.MultipleChoiceField( required=False,
-#     widget=SelectMultiple(), choices=[ (o.id, str(o)) for o in Interest.objects.all()])#Interest.objects.all())
-  interests = forms.ModelMultipleChoiceField(queryset=Interest.objects.all(),widget=SelectMultiple(),required=False)
-
+  password = ReadOnlyPasswordHashField(label='Password',
+                                       help_text="""Raw passwords are not stored, use <a href=\"lost_password.html\">this form</a>.""")
   class Meta:
+    # Since we are overriding Meta we have to re-tell it the model also
     model = User
+    exclude = ['password1', 'password2']
+ 
+  def __init__(self, *args, **kwargs):
+    super(UserChangeForm, self).__init__(*args, **kwargs)
+    self.helper = FormHelper()
+    self.helper.form_method = 'post'
+    self.helper.form_action = 'save'
+    self.helper.form_class = 'form-horizontal'
+    self.helper.label_class = 'col-md-5'
+    self.helper.field_class = 'col-md-6'
+    self.helper.layout = Layout(
+      Fieldset('Personal info'
+               ,'first_name','last_name','username', 'password'
+               ,'email','telephone','affiliation','department','address','bill_address'
+               ),
+      Fieldset('More about yourself'
+               ,'avatar','gender','research_status', 'research_field', 'supervisor'
+               ,'short_bio'
+               ),
+      Fieldset('Social networking'
+               ,'twitter','google_plus','facebook', 'personal_email', 'news_feed'
+               ,'publication_feed'
+               ),
+      Fieldset('Admin'
+               ,'last_login', 'date_joined'
+               ),
+                                
+      HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
+      Submit('submit', 'Save'), 
+      HTML('</div></div>'),
+    )  
+#   receive_newsletter = forms.BooleanField(required=False)
+# #   interests = ModelChoiceField(queryset=Interests.objects.all())
+# #   interests = forms.MultipleChoiceField( required=False,
+# #     widget=SelectMultiple(), choices=[ (o.id, str(o)) for o in Interest.objects.all()])#Interest.objects.all())
+#   interests = forms.ModelMultipleChoiceField(queryset=Interest.objects.all(),widget=SelectMultiple(),required=False)
+# 
+#   class Meta:
+#     model = User
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -121,7 +157,7 @@ class UserRegistrationForm(UserCreationForm):
                ),
       Fieldset('Social networking'
                ,'twitter','google_plus','facebook', 'personal_email', 'news_feed'
-               ,'publication_feeds'
+               ,'publication_feed'
                ),
       HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
       Submit('submit', 'Register'), 

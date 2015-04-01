@@ -1,7 +1,8 @@
 from django.core.urlresolvers import reverse           
-from django.views.generic.edit import FormView         
+from django.views.generic.edit import FormView, UpdateView         
 from django.views.generic.base import TemplateView, RedirectView
 from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
 from django.http import Http404
@@ -9,8 +10,23 @@ from django.contrib.sites.models import Site
  
 from templated_email import send_templated_mail
        
-from myauth.forms import LoginForm, UserRegistrationForm, LostPasswordForm, LostPasswordChangeForm
+from myauth.forms import LoginForm, UserRegistrationForm, LostPasswordForm, LostPasswordChangeForm, UserChangeForm
 from myauth.models import Registration, User
+
+
+class ProfileView(UpdateView):
+ 
+  template_name = 'myauth/profile.html'
+  form_class = UserChangeForm
+  def get_object(self, queryset=None):
+    return self.request.user
+
+  def form_valid(self, form):
+    user = form.save()
+    user.is_active = True
+    user.save()
+    messages.info(self.request, 'Profile update successfull')
+    return super(ProfileView, self).form_valid(form)
 
 
 class RegisterView(FormView):
