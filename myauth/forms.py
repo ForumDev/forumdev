@@ -117,7 +117,7 @@ class UserChangeForm(AuthUserChangeForm):
                ),
                                 
       HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
-      Submit('submit', 'Save'), 
+      Submit('submit', 'Update'), 
       HTML('</div></div>'),
     )  
 #   receive_newsletter = forms.BooleanField(required=False)

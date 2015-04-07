@@ -18,8 +18,11 @@ class ProfileView(UpdateView):
  
   template_name = 'myauth/profile.html'
   form_class = UserChangeForm
+  success_url = '/'
   def get_object(self, queryset=None):
     return self.request.user
+  def get_success_url(self):
+    return '/'
 
   def form_valid(self, form):
     user = form.save()
