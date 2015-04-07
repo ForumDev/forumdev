@@ -43,30 +43,11 @@ https://github.com/ForumDev/aldryn-blog.git
 
 7) edit `forumdev/settings.py` and setup  DATABASES (at the end of the file)
 
-8) comment out the following lines in settings.py
+8) `python manage.py syncdb`
 
-```
-INSTALLED_APPS += (
-    'myauth',
-)
+9) `python manage.py migrate`
 
-AUTH_USER_MODEL = 'myauth.User'
-```
-
-9) `python manage.py syncdb`
-
-> create user [yes]
-
-10) `python manage.py migrate`
-
-11) uncomment the lines in 8)
-
-12.1) `python manage.py syncdb`
-> don't delete auth | user tables when asked [no] (might need fixing somewhere)
-
-12.2) `python manage.py migrate myauth`
-
-13) `python manage.py createsuperuser`
+10) `python manage.py createsuperuser`
 
 
 ### you are all setup 
@@ -104,9 +85,8 @@ restart server
 
 
 #### comments
->it's a little messy at the moment, didn't get to that yet :-)
 
 >thanks for all these great resources out there I tried
 
->be sure to notice that this is a work in progress (I'll start working on a new branch starting tomorrow (2.11.2014) since I'll be on vacation until 11.10.2014 and don't know what the internet situation will be)
+>be sure to notice that this is a work in progress
 
