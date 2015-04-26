@@ -12,9 +12,9 @@
             <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
         {% endaddtoblock %}
         {% addtoblock "js" %}
+            <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
         {% endaddtoblock %}
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
     </head>
     <body style="padding-top:8px">
         {% cms_toolbar %}
@@ -58,7 +58,6 @@
             </footer>
         </div>
         <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         {% render_block "js" %}
     </body>
 </html>
