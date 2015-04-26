@@ -159,6 +159,9 @@ class UserRegistrationForm(UserCreationForm):
                ,'twitter','google_plus','facebook', 'personal_email', 'news_feed'
                ,'publication_feed'
                ),
+      Fieldset('Terms and Conditions'
+               ,'accept_terms'
+               ),
       HTML('<div class="form-group"><div class="col-md-5"> </div><div class="col-md-6">'), 
       Submit('submit', 'Register'), 
       HTML('</div></div>'),

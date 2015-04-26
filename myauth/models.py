@@ -106,6 +106,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     help_text=_('Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
   date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
   receive_newsletter = models.BooleanField(_('receive newsletter'), default=False)
+  accept_terms = models.BooleanField(_('Accept the <a href="/impressum/" target="_blank">terms and conditions</a> and our <a href="/data-protection/" target="_blank">data protection</a> policies'), default=False)
 
   USERNAME_FIELD = 'username'
   REQUIRED_FIELDS = ['email','first_name','last_name']
