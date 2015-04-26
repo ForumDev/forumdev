@@ -110,7 +110,7 @@ class UserChangeForm(AuthUserChangeForm):
                ),
       Fieldset('Social networking'
                ,'twitter','google_plus','facebook', 'personal_email', 'news_feed'
-               ,'publication_feed'
+               ,'google_scholar','orcid_id'
                ),
       Fieldset('Admin'
                ,'last_login', 'date_joined'
@@ -157,7 +157,7 @@ class UserRegistrationForm(UserCreationForm):
                ),
       Fieldset('Social networking'
                ,'twitter','google_plus','facebook', 'personal_email', 'news_feed'
-               ,'publication_feed'
+               ,'google_scholar','orcid_id'
                ),
       Fieldset('Terms and Conditions'
                ,'accept_terms'
