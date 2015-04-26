@@ -5,8 +5,8 @@
 {% for logo in logos %}
     {% if site in logo.sites.all %} 
         {% if logo.image.url %} 
-        <a href="#" title="">
-            <img src="{{ logo.image.url }}">
+        <a href="{% if logo.url %}{{ logo.url }}{% else %}/{% endif %}" title="">
+            <img src="{{ logo.image.url }}" style="height:63px;">
         </a>
             {% if logo.title %}
                 {{ logo.title }}
