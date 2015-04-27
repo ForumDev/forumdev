@@ -88,7 +88,7 @@ class User(AbstractBaseUser, PermissionsMixin):
   avatar = models.ImageField("Picture", upload_to="images/profile/", blank=True, null=True,default='')
   research_status = models.CharField(_('Status (Student, faculty, staff, ...)'), max_length=255, blank=True, null=True,default='')
   gender = models.CharField(_('Gender'), max_length=16, blank=True, null=True, choices = GENDER_CHOICES, default='unspecified')
-  research_field = models.CharField(_('Research field/interests'), max_length=255, blank=True, null=True,default='')
+  research_field = models.CharField(_('Research field/keywords (comma separated)'), max_length=255, blank=True, null=True,default='')
   supervisor = models.CharField(_('Scientific advisor/mentor'), max_length=255, blank=True, null=True,default='')
   short_bio = models.TextField(_('Short bio/bragging rights'), blank=True, null=True,default='')
   
