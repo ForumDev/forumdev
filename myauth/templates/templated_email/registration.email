@@ -1,4 +1,4 @@
-{% block subject %}Registration complete for {{registration.user.full_name}} on {{ current_site.domain }}{% endblock %}
+{% block subject %}Registration complete for {{registration.user.first_name}} {{registration.user.last_name}} on {{ current_site.domain }}{% endblock %}
  
 {% block html %}
 <p>Dear {{registration.user.first_name}} {{registration.user.last_name}},</p>
