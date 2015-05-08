@@ -1,7 +1,7 @@
 {% block subject %}Registration complete for {{registration.user.full_name}} on {{ current_site.domain }}{% endblock %}
  
 {% block html %}
-<p>Dear {{registration.user.short_name}},</p>
+<p>Dear {{registration.user.first_name}} {{registration.user.last_name}},</p>
  
 <p>You just signed up for {{ current_site.domain }} with the username {{registration.user.username}}.<br/>
 {% endblock %}
