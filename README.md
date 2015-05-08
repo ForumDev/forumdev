@@ -49,6 +49,8 @@ https://github.com/ForumDev/aldryn-blog.git
 
 10) `python manage.py createsuperuser`
 
+11) make sure that the `media` folder is writeable by the webserver user
+
 
 ### you are all setup 
 
