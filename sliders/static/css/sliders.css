@@ -1,6 +1,6 @@
 /* Basic jQuery Slider essential styles */
 
-ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
+ul.bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:inline-block !important;}
 li.bjqs-slide{position:absolute; display:none;}
 ul.bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
 ul.bjqs-controls.v-centered li a{position:absolute;}
@@ -70,3 +70,4 @@ p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bot
     font-size:110%;
     color:white;
 }
+
