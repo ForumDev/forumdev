@@ -1,0 +1,41 @@
+[{  
+  "pk":1,
+  "model":"boxes.box",
+  "fields":{  
+    "url":"",
+    "page":null,
+    "image":"images/box/mediabutton_blog_v2.jpg",
+    "title":"Blog"
+  }
+},
+{  
+  "pk":2,
+  "model":"boxes.box",
+  "fields":{  
+    "url":"",
+    "page":null,
+    "image":"images/box/mediabutton_podcast_v2.jpg",
+    "title":"Podcast"
+  }
+},
+{  
+  "pk":3,
+  "model":"boxes.box",
+  "fields":{  
+    "url":"",
+    "page":null,
+    "image":"images/box/mediabutton_talks_v2.jpg",
+    "title":"Talks"
+  }
+},
+{  
+  "pk":4,
+  "model":"boxes.box",
+  "fields":{  
+    "url":"",
+    "page":null,
+    "image":"images/box/mediabutton_publications_v2.jpg",
+    "title":"Talks"
+  }
+}
+]
