@@ -68,8 +68,8 @@ function highlightLast(ele) {
 
 jQuery(document).ready(function($) {
     $('#slider').bjqs({
-        'height' : 350,
-        'width' : '99%',
+//        'height' : 400,
+        'width' : '100%',
         'responsive' : true,
         'showcontrols' : true,
         'usecaptions' : true,

@@ -10,7 +10,7 @@ ol.bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
 ol.bjqs-markers.h-centered{text-align: center;}
 ol.bjqs-markers li{display:inline;}
 ol.bjqs-markers li a{display:inline-block;}
-p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+p.bjqs-caption{display:block;width:100%;margin:0;padding:2%;position:absolute;bottom:0;}
 
 .bjqs-caption {
     background: rgba(255,255,255,0.7);
@@ -26,7 +26,7 @@ p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bot
     height: 0;
 }
 .sliders {
-    margin-left:0.5%;
+    /*margin-left:0.5%;*/
 }
 #slider a { 
     color:black; 
@@ -37,11 +37,11 @@ p.bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bot
 }
 
 #slider {
-    margin-bottom:40px;
+    margin-bottom:43px;
 }
 .slider-title {
     float:left;
-    width:99%;
+    width:100%;
     /*margin-left: 9px;*/
     /*margin-bottom: 12px;*/
 }

@@ -9,7 +9,7 @@ class Sliders(CMSPluginBase):
     model = CMSPlugin  # Model where data about this plugin is saved
     module = _("forumdev-Sliders")
     name = _("forumdev-Sliders Plugin")  # Name of the plugin
-    render_template = "sliders/sliders.html"  # template to render the plugin with
+    render_template = "sliders/flexsliders.html"  # template to render the plugin with
 
     def render(self, context, instance, placeholder):
         context['sliders'] = models.Slider.objects.all
