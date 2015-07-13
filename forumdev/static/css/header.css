@@ -3,7 +3,25 @@
     Author     : maik
 */
 body {
-    background: url(../images/b03.png) repeat-x;
+    /*background: url(../images/b03.png) repeat-x;*/
+    background-color:#eeebe4 !important;
+}
+.logo {
+    vertical-align:bottom;
+}
+.sponsors {
+    vertical-align:bottom;
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    padding-bottom: 5px;
+}
+.forumdev-header {
+    overflow:auto;
+    position: relative;
+    /*height:100%;*/
+    /*clear:both;*/
+    /*display: inline-block;*/
 }
 
 /* div.forumdev-header .logo {
@@ -12,21 +30,35 @@ body {
     width: 30%;
     padding-bottom:5px;
 } */
-
+.navbar-collapse {
+    padding-left:0px !important;
+    padding-right:10px !important;
+}
 div.forumdev-header .sponsors {
     text-align:right;
 }
 .login {
     text-align: right;
-    /* float:right; */
+     float:right; 
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    float:left;
 }
 .navbar-default {
     /*background-color: #FC9210 !important;*/
-    background-image: linear-gradient(to bottom,#FC9210 0,#FCBD10 100%) !important;
+    background-image: linear-gradient(to bottom,#fc9200 0,#fc9200 100%) !important;
     border-color: #FC9610 !important;
-    background-color: #FC9610 !important;
+    background-color: #fc9200 !important;
 }
 
 .navbar-default .navbar-nav>.active>a {
-    background-image: linear-gradient(to bottom,#FC6E10 0,#FCBD10 100%) !important;
+    background-image: linear-gradient(to bottom,#fc8100 0,#fc6a00 100%) !important;
+}
+
+.navbar {
+    margin-bottom:1% !important;
+}
+
+.navbar-default {
+    border-radius: 0px !important;
 }

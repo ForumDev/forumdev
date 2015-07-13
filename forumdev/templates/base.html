@@ -19,13 +19,6 @@
     <body style="padding-top:8px">
         {% cms_toolbar %}
         <div class="container">
-                <div class="login">
-                  {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Log out</a> | <a href="{% url 'profile' %}">Profile</a>        
-                  {% else %} 
-                    <a href="{% url 'login' %}">Log in</a> | <a href="{% url 'register' %}">Register</a>
-                  {% endif %}
-                </div>
             <div class="forumdev-header">
                 {% static_placeholder "logo" %}
                         <!-- <img src="{% static 'images/ine_logo.png' %}" alt=""> -->
@@ -48,6 +41,13 @@
                     <ul class="nav navbar-nav">
                         {% show_menu 0 100 100 100 "menu.html" %}
                     </ul>
+                </div>
+                <div class="login">
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Log out</a> | <a href="{% url 'profile' %}">Profile</a>        
+                  {% else %} 
+                    <a href="{% url 'login' %}">Log in</a> | <a href="{% url 'register' %}">Register</a>
+                  {% endif %}
                 </div>
             </div>
             {% block content %}

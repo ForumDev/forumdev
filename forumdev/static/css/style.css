@@ -1,6 +1,8 @@
 /*don't display blog title */
 
-
+a, a:focus, a:hover { //override link color to INE logo blue
+    color: #3b5a6f !important;
+}
 
 /*html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p
 , blockquote, code, em, img, strong, sub, sup, b, i, dl, dt, dd
@@ -131,55 +133,7 @@ footer {
     font-size:130%;
     font-weight:bold;
 }*/
-/* medialist */
-.wrapper-media a {
-position: absolute;
-top: 0px;
-left: 10px;
-padding: 12px 8px 10px 8px;
-width: 100%;
-font-size: 34px !important;
-line-height: 30px;
-text-shadow: 1px 2px 20px rgba(0,0,0,0.7);
-}
-.icon_pages {
-width: 100%;
-display: table-cell;
-float: none;
-}
-#medialistdiv {
-background-color: #CCC9BF;
-padding: 10px 8px 10px 8px;
-margin-top: 12px;
-display: inline-block;
-}
 
-.medialist li a {
-color: #fff;
-}
-.wrapper-media img {
-width: 100%;
-position: relative;
-}
-
-.medialist li {
-display: inline;
-float: left;
-padding: 0px 8px 0px 8px;
-position: relative;
-margin-bottom: 0px;
-}
-
-ul.medialist {
-position: relative;
-width: 100%;
-font-size: 17px;
-color: white;
-padding: 0;
-margin: 0;
-float: left;
-list-style-type: none;
-}
 /* popup */
 
 .white-popup {
