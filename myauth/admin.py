@@ -34,7 +34,7 @@ class UserAdmin(AuthUserAdmin):
                                         #, 'interests'
                                         )}),
     ('Social networking', {'fields': ('twitter','google_plus', 'facebook'
-                                      , 'personal_email', 'news_feed','publication_feed')}),
+                                      , 'personal_email', 'news_feed','google_scholar', 'orcid_id')}),
     ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
                     #'groups'#, 'user_permissions'
                     )}),
