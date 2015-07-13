@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 ##DEFINE SITE URL
-SITE_URL = 'http://localhost:8000/'
+SITE_URL = 'http://forumdev.crisler.ch/'
 
 
 
@@ -113,12 +113,6 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'myauth',
-)
-AUTH_USER_MODEL = 'myauth.User'
-
-
-INSTALLED_APPS += (
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
     'django.contrib.auth',
@@ -153,8 +147,13 @@ INSTALLED_APPS += (
     'categories', 
     'sliders',
     'publications',
+    'boxes',
 )
 
+INSTALLED_APPS += (
+    'myauth',
+)
+AUTH_USER_MODEL = 'myauth.User'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap'
