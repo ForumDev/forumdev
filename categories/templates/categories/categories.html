@@ -1,17 +1,22 @@
 {% load sekizai_tags %}
+{% load staticfiles %}
 {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/categories.css"></script>{% endaddtoblock %}
-
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/categories.js"></script>
+{% endaddtoblock %}
 <div class="categories">
     {% for cat in cats %}
     {% if instance.cat.id == cat.id %} 
         <div class="image-portada">
+          <a href="{{ cat.link }}" title="{{ cat.title }}">
             <img alt="{{ cat.title }}" src="{{ cat.image.url }}">
+          </a>
             <div class="wrapper-portada1">
                 <p>
                     <span>
-                        <span class="">
-                            <a href="{{ cat.link }}" title="{{ cat.title }}">{{ cat.title }}</a>
-                        </span> 
+                            <a href="{{ cat.link }}" title="{{ cat.title }}">
+                              {{ cat.title }}
+                            </a>
                         {{ cat.short_text }}
                     </span>
                 </p>
@@ -22,10 +27,13 @@
                         {% if subcat.cat == cat %}
                 <li>
                     <div class="subitem-box">
+                      <a href="{{ subcat.url }}" title="{{ subcat.title }}">
                         <img alt="{{ subcat.title }}" src="{{ subcat.image.url }}">
                         <div class="subitem-text">
-                            <a href="{{ subcat.url }}" title="{{ subcat.title }}">{{ subcat.title }}</a>
+                              {{ subcat.title }}
                         </div>
+                      </a>
+
                     </div>
                 </li>
                         {% endif %}
