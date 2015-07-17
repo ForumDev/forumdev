@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{% block title %}ForumDev{% endblock title %}</title>
+        <title>{% block title %}Institute of Neuromorphic Engineering{% endblock title %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% render_block "css" %}
         {% addtoblock "css" %}
@@ -14,7 +14,7 @@
         {% addtoblock "js" %}
             <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
         {% endaddtoblock %}
-
+	<link rel="icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon" />
     </head>
     <body style="padding-top:8px">
         {% cms_toolbar %}
