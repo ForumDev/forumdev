@@ -17,6 +17,7 @@ urlpatterns = patterns('',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^publications/', include('publications.urls')),
     url(r'^auth/', include('myauth.urls')),
+    url(r'^applicant/', include('applicants.urls')),
     url(r'^select2/', include('django_select2.urls')),
     url(r'^', include('cms.urls')),
 )
