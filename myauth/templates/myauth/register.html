@@ -1,9 +1,0 @@
-{% extends 'base.html'%}
-{% load sekizai_tags %}
-
-{% load crispy_forms_tags %}
-{% block content %}
-  {% addtoblock "css" %}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/users.css"></script>{% endaddtoblock %}
-  <h1>Registration</h1>
-  {% crispy form %}
-{% endblock %}

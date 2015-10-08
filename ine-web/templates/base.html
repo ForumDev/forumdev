@@ -1,0 +1,65 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Institute of Neuromorphic Engineering{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% render_block "css" %}
+        {% addtoblock "css" %}
+            <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/header.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/tables-min.css" rel="stylesheet">
+        {% endaddtoblock %}
+        {% addtoblock "js" %}
+            <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        {% endaddtoblock %}
+	<link rel="icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon" />
+    </head>
+    <body style="padding-top:8px">
+        {% cms_toolbar %}
+        <div class="container">
+            <div class="forumdev-header">
+                {% static_placeholder "logo" %}
+                        <!-- <img src="{% static 'images/ine_logo.png' %}" alt=""> -->
+                {% static_placeholder "sponsors" %}
+                <!--<div class="sponsors">-->
+                <!--</div>-->
+            </div>
+            <div class="clear"></div>
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="{% static 'images/home.png' %}"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {% show_menu 0 100 100 100 "menu.html" %}
+                    </ul>
+                </div>
+                <div class="login">
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Log out</a> | <a href="{% url 'profile' %}">Profile</a>        
+                  {% else %} 
+                    <a href="{% url 'login' %}">Log in</a>
+                  {% endif %}
+                </div>
+            </div>
+            {% block content %}
+            {% endblock content %}
+            <footer>
+                <hr/>
+                {% static_placeholder 'footer' %}
+            </footer>
+        </div>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        {% render_block "js" %}
+    </body>
+</html>
+

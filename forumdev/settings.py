@@ -1,13 +1,14 @@
 import os
 gettext = lambda s: s
+DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for forumdev project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
+https://docs.djangoproject.com/en/1.7/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -15,24 +16,20 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v!ssmscped+$u9u02h13t&&e1cuiahz$yf_f5k%yimul!dl#of'
+SECRET_KEY = 'dx5d4-#fk@hje&g-2n@dh^3$*6x868w(^e_km-nxe@jbivg3b^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
-##DEFINE SITE URL
-SITE_URL = 'http://forumdev.crisler.ch/'
+
 
 
 
@@ -41,13 +38,8 @@ ROOT_URLCONF = 'forumdev.urls'
 WSGI_APPLICATION = 'forumdev.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-
-
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
+# https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en'
 
@@ -61,12 +53,12 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
+# https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'forumdev', 'static'),
@@ -77,21 +69,6 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.Loader'
-)
-
-MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.doc.XViewMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'cms.middleware.user.CurrentUserMiddleware',
-    'cms.middleware.page.CurrentPageMiddleware',
-    'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -109,10 +86,25 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'forumdev', 'templates'),
+    os.path.join(BASE_DIR, 'ine-web', 'templates'),
+)
+
+MIDDLEWARE_CLASSES = (
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware'
 )
 
 INSTALLED_APPS = (
+    'fduser',
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
     'django.contrib.auth',
@@ -124,10 +116,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'cms',
-    'mptt',
     'menus',
-    'south',
     'sekizai',
+    'treebeard',
     'djangocms_style',
     'djangocms_column',
     'djangocms_file',
@@ -139,64 +130,18 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
-    'crispy_forms',
-    'logos',
-#    the forumdev-public apps:
     'forumdev',
-    'sponsors',
-    'categories', 
-    'sliders',
-    'publications',
-    'boxes',
+    'crispy_forms',
+    'flexslider',
 )
 
-INSTALLED_APPS += (
-    'myauth',
-)
-AUTH_USER_MODEL = 'myauth.User'
-
-
-CRISPY_TEMPLATE_PACK = 'bootstrap'
-
-
-INSTALLED_APPS += (
-    'aldryn_blog',
-    'aldryn_common',
-    'django_select2',
-#     'djangocms_text_ckeditor',
-    'easy_thumbnails',
-    'filer',
-    'taggit',
-    'hvad',
-)
-
-SOUTH_MIGRATION_MODULES = {
-    'easy_thumbnails': 'easy_thumbnails.south_migrations',
-}
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    #'easy_thumbnails.processors.scale_and_crop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
-)
-
-EMAIL_USE_TLS = False
-##NEED TO SETUP SMTP ON HOST
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 25
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'ForumDev <support@f14k2011.sui-inter.net>'
+AUTH_USER_MODEL = 'fduser.User'
 
 LANGUAGES = (
     ('en', gettext('en')),
 )
-CMS_PLUGIN_CACHE = False
 
 CMS_LANGUAGES = {
-    ## Customize this
     'default': {
         'public': True,
         'hide_untranslated': False,
@@ -214,27 +159,32 @@ CMS_LANGUAGES = {
 }
 
 CMS_TEMPLATES = (
-    ## Customize this
     ('page.html', 'Page'),
-#    ('feature.html', 'Page with Feature')
 )
 
 CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
-#DATABASES = {
-#    'default':
-#        {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
-#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'forumdev3',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': 'fduser',
-        'PASSWORD': 'mb27199',
-        'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'localhost',
+        'NAME': 'forumdev',
+        'PASSWORD': '....',
+        'PORT': '',
+        'USER': 'fduser'
     }
+}
+
+MIGRATION_MODULES = {
+    'djangocms_flash': 'djangocms_flash.migrations_django',
+    'djangocms_file': 'djangocms_file.migrations_django',
+    'djangocms_inherit': 'djangocms_inherit.migrations_django',
+    'djangocms_column': 'djangocms_column.migrations_django',
+    'djangocms_video': 'djangocms_video.migrations_django',
+    'djangocms_picture': 'djangocms_picture.migrations_django',
+    'djangocms_googlemap': 'djangocms_googlemap.migrations_django',
+    'djangocms_style': 'djangocms_style.migrations_django',
+    'djangocms_teaser': 'djangocms_teaser.migrations_django'
 }
