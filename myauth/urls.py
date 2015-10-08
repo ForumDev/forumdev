@@ -13,6 +13,7 @@ except ImportError:
 urlpatterns = patterns('',
     url(r'^email_sent\.html$', EmailSentView.as_view(), name='confirmation_mail_sent'),                   
     url(r'^login\.html$', LoginView.as_view(), name='login'),
+    url(r'^login/', LoginView.as_view(), name='login'),
     url(r'^logout\.html$', LogoutView.as_view(), name='logout'),
     url(r'^profile\.html$', ProfileView.as_view(), name='profile'),
     url(r'^save$', ProfileView.as_view(), name='profile'),
