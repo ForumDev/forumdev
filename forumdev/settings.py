@@ -133,6 +133,10 @@ INSTALLED_APPS = (
     'forumdev',
     'crispy_forms',
     'flexslider',
+    'logos',
+    'sponsors',
+    'categories',
+    'boxes',
 )
 
 AUTH_USER_MODEL = 'fduser.User'

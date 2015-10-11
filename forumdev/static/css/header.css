@@ -9,7 +9,7 @@ body {
 .logo {
     vertical-align:bottom;
 }
-.sponsors {
+.patrons {
     vertical-align:bottom;
     position:absolute;
     right:0px;
@@ -34,7 +34,7 @@ body {
     padding-left:0px !important;
     padding-right:10px !important;
 }
-div.forumdev-header .sponsors {
+div.forumdev-header .patrons {
     text-align:right;
 }
 .login {
