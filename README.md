@@ -20,11 +20,15 @@
 
 3.1) check out the follwoing ... somewhere
 ```
-https://github.com/ForumDev/forumdev.git
-https://github.com/ForumDev/djangocms-publications.git
-https://github.com/ForumDev/aldryn-blog.git
+git@github.com:ForumDev/forumdev.git
+git@github.com:ForumDev/forumdev-user.git
+git@github.com:ForumDev/django-fddiv.git
+git@github.com:ForumDev/djangocms-sponsors.git
+git@github.com:ForumDev/djangocms-flexslider.git
+git@github.com:ForumDev/djangocms-logos.git
+git@github.com:ForumDev/djangocms-applicants.git
 ```
-3.2) create a symlink from `djangocms-publications/publications` and `aldryn-blog/aldryn-blog` to forumdev/. 
+3.2) create the symlinks from apps (eg. `djangocms-sponsors/sponsors`)  to forumdev/. 
 > (examples in repo)
 
 3) `virtualenv fdenv`
@@ -45,7 +49,7 @@ https://github.com/ForumDev/aldryn-blog.git
 
 8) `python manage.py syncdb`
 
-9) `python manage.py migrate`
+9) `python manage.py migrate` (not sure if nessecary - will update soon)
 
 10) `python manage.py createsuperuser`
 
@@ -89,6 +93,5 @@ restart server
 #### comments
 
 >thanks for all these great resources out there I tried
-
 >be sure to notice that this is a work in progress
 
