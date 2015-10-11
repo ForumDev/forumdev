@@ -5,10 +5,11 @@
 
 
 * Python = 2.7.0 (? >=)
-* Django = 1.6.8 
-* Pillow >= 2.4.0
+* Django = 1.7.10
+* django-cms = 3.1.3
 
 > The app was tested with the versions above, but older versions might also work.
+> for the rest, see requirements.txt
 
 #### install
 
