@@ -1,4 +1,4 @@
-Django==1.6.8
+Django==1.11.28
 Django-Select2==4.2.2
 Pillow>=6.0.0
 South>=1.0.2
