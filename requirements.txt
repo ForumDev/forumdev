@@ -34,7 +34,7 @@ djangocms-text-ckeditor==2.4.0
 djangocms-video==0.1
 easy-thumbnails==2.2
 python-dateutil>=2.4.2
-html5lib==0.999
+html5lib==0.999999999
 psycopg2==2.5.4
 pytz==2014.7
 simplejson==3.7.3
